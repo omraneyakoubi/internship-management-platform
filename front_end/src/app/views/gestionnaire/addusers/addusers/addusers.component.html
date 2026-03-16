@@ -1,0 +1,79 @@
+<!-- addusers.component.html -->
+<div class="row justify-content-center">
+
+<div class="card mb-4 col-sm-7 ">
+  <div class="card-header d-flex align-items-center">
+    <h5 class="mb-0 text-center">Cette interface permet d'ajouter un utilisateur</h5>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="cin">CIN</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="cin" [(ngModel)]="user.cin" name="cin" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="nom">Nom</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="nom" [(ngModel)]="user.nom" name="nom" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="prenom">Prenom</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="prenom" [(ngModel)]="user.prenom" name="prenom" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="email">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" />
+          <small class="form-text text-muted">You can use letters, numbers & periods</small>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="etablissement">Etablissement</label>
+        <div class="col-sm-10">
+          <select class="form-select" id="etablissement" [(ngModel)]="user.etablissement" name="etablissement">
+            <option value="" disabled selected>Select your Etablissement</option>
+            <option >FSJEG Jendouba</option>
+            <option >ISSH Jendouba</option>
+            <option >ISMT kef</option>
+            <option >ISEAH kef</option>
+            <option >islai Beja</option>
+            <option >isam Siliana</option>
+            <option >isi kef</option>
+            <option >isb Beja</option>
+            <option >isp Tabarka</option>
+            <option >issi kef</option>
+            <option >esier Medjez El Bab</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="role">Role</label>
+        <div class="col-sm-10">
+          <select class="form-select" id="role" [(ngModel)]="user.role" name="role">
+            <option value="gestionnaire">gestionnaire</option>
+            <option value="encadreur">encadreur</option>
+            <option value="directeur">directeur</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="mdp">Mot de passe</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="mdp" [(ngModel)]="user.mdp" name="mdp" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-10 offset-sm-2 center">
+          <button type="submit" class="btn btn-primary center" (click)="validateForm()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

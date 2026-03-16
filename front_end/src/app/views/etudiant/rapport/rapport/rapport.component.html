@@ -1,0 +1,50 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Consultation et impression les rapport de stage </h4>
+        <p class="mt-4">
+          Si vous souhaitez ajouter un rapport  de stage, cliquez sur le bouton ci-dessous.
+        </p>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" routerLink="/etudiant/addrapport">
+            Ajouter un rapport de stage
+          </button>
+        </div><br>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+
+                <th>Nom Prenom</th>
+                <th>Rapport</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rapport of rapports">
+                <td class="py-1">{{ rapport.id }}</td>
+
+                <td class="py-1">{{ rapport.nomprenom }}</td>
+                <td>{{ rapport.rapport }}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm" (click)="downloadRapport(rapport.id, rapport.rapport)">Télécharger</button>
+                  <button class="btn btn-info btn-sm" [routerLink]="['/etudiant/rapport/',rapport.id]" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                      <path d="M11.293 3.293a1 1 0 0 1 1.414 0l.793.793a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l7-7zM12 4l1-1a1 1 0 0 1 1.41 1.41L13.41 5 12 3.59 13.59 2 15 3.41a1 1 0 0 1 0 1.42l-1 1a1 1 0 0 1-1.41 0L12 4z"/>
+                      <path fill-rule="evenodd" d="M5.5 1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5zM14 5a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                    </svg>
+                  </button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteRapport(rapport)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <path d="M3.879 5.586L2.464 14a1.5 1.5 0 0 0 1.464 1.964h8.144a1.5 1.5 0 0 0 1.464-1.964l-1.414-8.414a1.5 1.5 0 0 0-1.464-1.086H5.343a1.5 1.5 0 0 0-1.464 1.086zM1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v1H1V3zm13 1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2h12zM5.5 7V6h-3v1h3zm4-1V6h3v1h-3z"/>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

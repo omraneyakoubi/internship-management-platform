@@ -1,0 +1,53 @@
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Liste des étudiants ayant un stage obligatoire</h4>
+      <p class="mt-4">
+        Si vous souhaitez ajouter des étudiants ayant un stage obligatoire, cliquez sur le bouton ci-dessous.
+      </p>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" routerLink="/gestionnaire/addoblig">
+          Ajouter des étudiants avec stage obligatoire
+        </button>
+      </div><br>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+
+              <th>Année</th>
+              <th>CIN</th>
+              <th>Domaine</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obligatoire of obligatoires">
+              <td>{{ obligatoire.id }}</td>
+
+              <td class="py-1">{{ obligatoire.annee }}</td>
+              <td>{{ obligatoire.cin }}</td>
+              <td>{{ obligatoire.domaine }}</td>
+              <td>{{ obligatoire.nom }}</td>
+              <td>{{ obligatoire.prenom }}</td>
+              <td>{{ obligatoire.email }}</td>
+              
+<td>
+  <button class="btn btn-success btn-sm" [routerLink]="['/gestionnaire/updateoblig', obligatoire.id]">
+    <i class="fa fa-trash"></i> Update 
+  </button>
+  
+  <button class="btn btn-danger btn-sm" (click)="deleteobg(obligatoire)">
+    <i class="fa fa-trash"></i> Delete
+  </button>
+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Modifier un étudiant avec un stage et un encadreur</h4>
+                        <p class="card-description">
+                            Formulaire de mise à jour
+                        </p>
+                        <form (submit)="updateEtudiantEncadreur()">
+                            <div class="form-group">
+                                <label for="nomet">Nom étudiant</label>
+                                <input type="text" class="form-control" id="nomet" [(ngModel)]="etudencadreur.nomet" name="nomet" placeholder="Nom étudiant">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailetud">Email étudiant</label>
+                                <input type="text" class="form-control" id="emailetud" [(ngModel)]="etudencadreur.emailetud" name="emailetud" placeholder="Email étudiant">
+                            </div>
+                            <div class="form-group">
+                                <label for="encadreur">Nom encadreur</label>
+                                <input type="text" class="form-control" id="encadreur" [(ngModel)]="etudencadreur.encadreur" name="encadreur" placeholder="Nom encadreur">
+                            </div>
+                            <div class="form-group">
+                                <label for="sujet">Sujet</label>
+                                <input type="text" class="form-control" id="sujet" [(ngModel)]="etudencadreur.sujet" name="sujet" placeholder="Sujet">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary mr-2">Mettre à jour</button>
+                                <button type="button" class="btn btn-light" (click)="resetForm()">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

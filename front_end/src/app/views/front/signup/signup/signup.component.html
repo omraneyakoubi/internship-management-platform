@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoFinance - Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5; /* Light background color */
+        }
+
+        .register-container {
+            background-color: #ffffff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 500px;
+        }
+
+        .register-container h1 {
+            text-align: center;
+            color: #1e4072; /* University's primary color */
+        }
+
+        .register-form {
+            margin-top: 20px;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e4072; /* University's primary color */
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-form button:hover {
+            background-color: #173157; /* Darker shade of primary color on hover */
+        }
+
+        .register-form p {
+            margin-top: 15px;
+            text-align: center;
+            color: #777777;
+        }
+
+        .app-brand-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #1e4072; /* University's primary color */
+        }
+
+        .app-brand-logo img {
+            width: 80px; /* Adjust the logo size as needed */
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .app-brand-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <a href="index.html" class="app-brand-link">
+            <span class="app-brand-logo">
+                <!-- Replace the src attribute with your custom logo path -->
+                <img src="assets/images-removebg-preview.png" width="200" alt="Université de Jendouba Logo" />
+            </span>
+            <span class="app-brand-text">Université de Jendouba</span>
+        </a>
+        <form class="register-form" (submit)="onSubmit()" #registerForm="ngForm" >
+            <input type="number" name="cin" [(ngModel)]="user.cin" placeholder="CIN" required>
+            <input type="text" name="nom" [(ngModel)]="user.nom" placeholder="Nom" required>
+            <input type="text" name="prenom" [(ngModel)]="user.prenom" placeholder="Prenom" required>
+            <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email Address" required>
+            <select name="etablissement" [(ngModel)]="user.etablissement" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  required>
+                <option value="" disabled selected>Select your Etablissement</option>
+                <option >FSJEG Jendouba</option>
+                <option >ISSH Jendouba</option>
+                <option >ISMT kef</option>
+                <option >ISEAH kef</option>
+                <option >islai Beja</option>
+                <option >isam Siliana</option>
+                <option >isi kef</option>
+                <option >isb Beja</option>
+                <option >isp Tabarka</option>
+                <option >issi kef</option>
+                <option >esier Medjez El Bab</option>
+            </select>
+            <input type="password" name="mdp" [(ngModel)]="user.mdp" placeholder="Password" required>
+            <button type="submit" (click)="validateForm()" >Register</button>
+        </form>
+        <p>Already have an account? <a routerLink="/login">Log in</a></p>
+    </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</body>
+</html>

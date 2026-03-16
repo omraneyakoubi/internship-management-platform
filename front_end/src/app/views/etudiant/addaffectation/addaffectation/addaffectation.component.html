@@ -1,0 +1,53 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ajouter une affectation de stage</h4>
+                        <p class="card-description">
+                            Formulaire de base
+                        </p>
+                        <form (submit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="nomsociete">Nom de la société</label>
+                                <input type="text" class="form-control" id="nomsociete" [(ngModel)]="affectation.nomsociete" name="nomsociete" placeholder="Nom de la société">
+                            </div>
+                            <div class="form-group">
+                                <label for="sujet">Sujet</label>
+                                <input type="text" class="form-control" id="sujet" [(ngModel)]="affectation.sujet" name="sujet" placeholder="Sujet">
+                            </div>
+                            <div class="form-group">
+                                <label for="adresse">Adresse</label>
+                                <input type="text" class="form-control" id="adresse" [(ngModel)]="affectation.adresse" name="adresse" placeholder="Adresse">
+                            </div>
+                            <div class="form-group">
+                                <label for="numrsociete">Numéro de société</label>
+                                <input type="text" class="form-control" id="numrsociete" [(ngModel)]="affectation.numrsociete" name="numrsociete" placeholder="Numéro de société">
+                            </div>
+                            <div class="form-group">
+                                <label for="nomencadreurtechnique">Nom de l'encadreur technique</label>
+                                <input type="text" class="form-control" id="nomencadreurtechnique" [(ngModel)]="affectation.nomencadreurtechnique" name="nomencadreurtechnique" placeholder="Nom de l'encadreur technique">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailetud">Email de l'étudiant</label>
+                                <input type="email" class="form-control" id="emailetud" [(ngModel)]="affectation.emailetud" name="emailetud" placeholder="Email de l'étudiant">
+                            </div>
+                            <div class="form-check form-check-flat form-check-primary">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary mr-2">Soumettre</button>
+                                <button type="button" class="btn btn-light" (click)="resetForm()">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+   

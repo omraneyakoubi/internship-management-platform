@@ -1,0 +1,59 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <br>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>CIN</th>
+                            <th>Nom Prenom</th>
+                            <th>Inscription</th>
+                            <th>Diplôme</th>
+                            <th>Spécialité</th>
+                            <th>Année</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let depot of depots">
+                            <td class="py-1">{{ depot.cin }}</td>
+                            <td>{{ depot.nomprenom }}</td>
+                            <td>{{ depot.inscri }}</td>
+                            <td>{{ depot.diplome }}</td>
+                            <td>{{ depot.spec }}</td>
+                            <td>{{ depot.annee }}</td>
+                            <td (click)="printDepot()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+                                    <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"/>
+                                </svg>
+                            </td>
+                          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Approver Le Demande De Stage</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                En approuvant cette entrée, vous confirmez que toutes les informations fournies sont exactes et répondent aux normes requises
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteDepot()">Supprimer</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="approveDepot()">Approver</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Modal -->

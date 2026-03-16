@@ -1,0 +1,30 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ajouter un rapport</h4>
+                        <p class="card-description">
+                            Formulaire de base
+                        </p>
+                        <form (ngSubmit)="onSubmit()" [formGroup]="rapportForm">
+                            <div class="form-group">
+                                <label for="nomprenom">Nom et Prénom</label>
+                                <input type="text" class="form-control" id="nomprenom" formControlName="nomprenom" placeholder="Nom et Prénom">
+                            </div>
+                            <div class="form-group">
+                                <label for="rapport">Rapport</label>
+                                <input type="file" class="form-control" id="rapport" (change)="onFileChange($event)" formControlName="rapport" accept=".pdf,.docx,.doc">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary mr-2" (click)="validateForm()">Ajouter</button>
+                                <button type="button" class="btn btn-light" (click)="resetForm()">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

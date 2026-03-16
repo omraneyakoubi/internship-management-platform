@@ -1,0 +1,54 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-md-7 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Ajouter un étudiant en stage obligatoire</h4>
+              <p class="card-description">
+                Formulaire de base
+              </p>
+              <form (submit)="onSubmit()">
+               
+                <div class="form-group">
+                  <label for="cin">CIN</label>
+                  <input type="text" class="form-control" id="cin" [(ngModel)]="depot.cin" name="cin" placeholder="CIN">
+                </div>
+             
+                <div class="form-group">
+                  <label for="nom">Nom et Prenom</label>
+                  <input type="text" class="form-control" id="nom" [(ngModel)]="depot.nomprenom" name="nom" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                  <label for="inscri">Inscription</label>
+                  <input type="text" class="form-control" id="inscri" [(ngModel)]="depot.inscri" name="inscri" placeholder="Inscription">
+                </div>
+                <div class="form-group">
+                  <label for="diplome">Diplôme</label>
+                  <input type="text" class="form-control" id="diplome" [(ngModel)]="depot.diplome" name="diplome" placeholder="Diplôme">
+                </div>
+                <div class="form-group">
+                  <label for="spec">Spécialité</label>
+                  <input type="text" class="form-control" id="spec" [(ngModel)]="depot.spec" name="spec" placeholder="Spécialité">
+                </div>
+                <div class="form-group">
+                    <label for="spec">Annee</label>
+                    <input type="text" class="form-control" id="spec" [(ngModel)]="depot.annee" name="spec" placeholder="annee">
+                  </div>
+                <div class="form-check form-check-flat form-check-primary">
+                  <input type="checkbox" class="form-check-input" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary mr-2">Ajouter</button>
+                  <button type="button" class="btn btn-light" (click)="resetForm()">Annuler</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

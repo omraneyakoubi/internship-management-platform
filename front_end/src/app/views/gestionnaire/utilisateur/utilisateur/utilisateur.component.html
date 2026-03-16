@@ -1,0 +1,48 @@
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Liste des Utilisateurs De votre Application</h4>
+      <p class="mt-4">
+        Si vous souhaitez ajouter des utilisateus:Gestionnaire/Encadreurs/Directeur De stage , cliquez sur le bouton ci-dessous.
+      </p>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" routerLink="/gestionnaire/addusers">
+          Ajouter des Utilisateurs  
+        </button>
+      </div><br>
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">UTILISATEURS</h4>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>CIN</th>
+                  <th>NOM</th>
+                  <th>PRENOM</th>
+                  <th>Email</th>
+                  <th>ROLE</th>
+                  <th>MDP</th>
+                  <th>Action</th> <!-- Add action column for delete icon -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users">
+                  <td>{{ user.cin }}</td>
+                  <td>{{ user.nom }}</td>
+                  <td>{{ user.prenom }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.role }}</td>
+                  <td>{{ user.mdp }}</td>
+                  <td>
+                    <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">
+                      <i class="fa fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      

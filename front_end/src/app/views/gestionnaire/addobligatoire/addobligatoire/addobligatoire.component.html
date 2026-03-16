@@ -1,0 +1,53 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-md-7 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Ajouter un étudiant avec un stage obligatoire</h4>
+              <p class="card-description">
+                Formulaire de base
+              </p>
+              <form (submit)="onSubmit()">
+                <div class="form-group">
+                  <label for="annee">Année</label>
+                  <input type="number" class="form-control" id="annee" [(ngModel)]="obligatoire.annee" name="annee" placeholder="Année">
+                </div>
+                <div class="form-group">
+                  <label for="cin">CIN</label>
+                  <input type="text" class="form-control" id="cin" [(ngModel)]="obligatoire.cin" name="cin" placeholder="CIN">
+                </div>
+                <div class="form-group">
+                  <label for="domaine">Domaine</label>
+                  <input type="text" class="form-control" id="domaine" [(ngModel)]="obligatoire.domaine" name="domaine" placeholder="Domaine">
+                </div>
+                <div class="form-group">
+                  <label for="nom">Nom</label>
+                  <input type="text" class="form-control" id="nom" [(ngModel)]="obligatoire.nom" name="nom" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                  <label for="prenom">Prénom</label>
+                  <input type="text" class="form-control" id="prenom" [(ngModel)]="obligatoire.prenom" name="prenom" placeholder="Prénom">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" [(ngModel)]="obligatoire.email" name="email" placeholder="Email">
+                </div>
+                <div class="form-check form-check-flat form-check-primary">
+                  <input type="checkbox" class="form-check-input" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+
+                <button type="submit" class="btn btn-primary mr-2" (click)="validateForm()">Ajouter</button>
+                <button type="button" class="btn btn-light" (click)="resetForm()">Annuler</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

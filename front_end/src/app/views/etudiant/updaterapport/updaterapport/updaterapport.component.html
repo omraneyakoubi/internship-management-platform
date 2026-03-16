@@ -1,0 +1,35 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Modifier le rapport</h4>
+                        <p class="card-description">
+                            Formulaire de mise à jour
+                        </p>
+                        <form (ngSubmit)="onSubmit()" *ngIf="rapportForm" [formGroup]="rapportForm">
+                            <div class="form-group">
+                                <label for="nomprenom">Nom et Prénom</label>
+                                <input type="text" class="form-control" id="nomprenom" formControlName="nomprenom" placeholder="Nom et Prénom">
+                              </div>
+                              
+                              <div class="form-group">
+                                <label for="rapport">Rapport</label>
+                                <input type="file" class="form-control" id="rapport" (change)="onFileChange($event)" accept=".pdf,.docx,.doc">
+                                <span *ngIf="rapportFile" class="file-name">{{ rapportFile.name }}</span>
+                              </div>
+                              
+                            <div class="d-flex justify-content-center">
+                              <button type="submit" class="btn btn-primary mr-2" [disabled]="!rapportForm.valid">Mettre à jour</button>
+                              <button type="button" class="btn btn-light" (click)="resetForm()">Annuler</button>
+                            </div>
+                          </form>
+                          
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
